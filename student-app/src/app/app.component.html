@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="sidebar">
+    <h3>Student App Menu</h3>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> Student List</a>
+    <a routerLink="/add" routerLinkActive="active"> Add Student</a>
+  </div>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

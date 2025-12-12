@@ -1,0 +1,104 @@
+<h2>Add New Student Details</h2>
+
+<form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label for="name">Full Name: *</label>
+    <input id="name" type="text" formControlName="name">
+    <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="error-message">
+      <div *ngIf="name?.errors?.['required']">
+        Name is required.
+      </div>
+      <div *ngIf="name?.errors?.['minlength']">
+        Name must be at least 5 characters long.
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="class">Class: *</label>
+    <select id="class" formControlName="class">
+      <option [ngValue]="null" disabled>Select Class</option>
+      <option *ngFor="let c of classes" [ngValue]="c">{{ 'Class ' + c }}</option>
+    </select>
+    <div *ngIf="studentClass?.invalid && (studentClass?.dirty || studentClass?.touched)" class="error-message">
+      <div *ngIf="studentClass?.errors?.['required']">
+        Class is required.
+      </div>
+    </div>
+
+    <p class="info-message" *ngIf="studentClass?.value">
+      <ng-container *ngIf="studentClass?.value === 9">
+        "You will appear in board exams soon. All the Best !!" 
+      </ng-container>
+      <ng-container *ngIf="studentClass?.value === 6">
+        "Welcome to middle school!" 
+      </ng-container>
+      <ng-container *ngIf="studentClass?.value !== 9 && studentClass?.value !== 6">
+        "Education and hobby go hand in hand!" 
+      </ng-container>
+    </p>
+  </div>
+
+  <div class="form-group">
+    <label>Gender: *</label><br>
+    <label><input type="radio" formControlName="gender" value="Male"> Male</label>
+    <label><input type="radio" formControlName="gender" value="Female"> Female</label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      <input type="checkbox" formControlName="hasHobby">
+      I have a hobby
+    </label>
+  </div>
+
+  <div class="form-group" *ngIf="hasHobbyControl?.value">
+    <label for="hobby">Hobby:</label>
+    <input id="hobby" type="text" formControlName="hobby">
+    </div>
+
+  <div class="form-group">
+    <label for="subject">Favorite Subject:</label>
+    <select id="subject" formControlName="favoriteSubject">
+      <option value="">Select (Optional)</option>
+      <option *ngFor="let sub of subjects" [value]="sub">{{ sub }}</option>
+    </select>
+  </div>
+
+  <button type="submit" [disabled]="studentForm.invalid">Save Student</button>
+
+</form>
+
+<style>
+/* Basic styling for the form */
+.form-group {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input[type="text"], .form-group select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+.info-message {
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #e6f7ff;
+    border-left: 5px solid #007bff;
+}
+</style>
