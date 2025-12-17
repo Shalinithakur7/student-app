@@ -1,0 +1,85 @@
+<h2>Add Student</h2>
+
+<form [formGroup]="studentForm" (ngSubmit)="saveStudent()">
+
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label>
+
+  <div *ngIf="studentForm.get('name')?.invalid && studentForm.get('name')?.touched">
+    Name is required (min 5 characters)
+  </div>
+
+  <br><br>
+
+  <label>
+    Class:
+    <select formControlName="class">
+      <option value="">Select</option>
+      <option>Class 6</option>
+      <option>Class 7</option>
+      <option>Class 8</option>
+      <option>Class 9</option>
+    </select>
+  </label>
+
+  <span *ngIf="studentForm.value.class === 'Class 9'">
+    You will appear in board exams soon. All the Best !!
+  </span>
+
+  <span *ngIf="studentForm.value.class === 'Class 6'">
+    Welcome to middle school!
+  </span>
+
+  <span *ngIf="studentForm.value.class &&
+               studentForm.value.class !== 'Class 6' &&
+               studentForm.value.class !== 'Class 9'">
+    Education and hobby go hand in hand!
+  </span>
+
+  <br><br>
+
+  <label>
+    <input type="radio" value="Male" formControlName="gender"> Male
+  </label>
+
+  <label>
+    <input type="radio" value="Female" formControlName="gender"> Female
+  </label>
+
+  <br><br>
+
+  <label>
+    Has Hobby:
+    <input type="checkbox" formControlName="hasHobby">
+  </label>
+
+  <br><br>
+
+  <div *ngIf="studentForm.value.hasHobby">
+    <label>
+      Hobby:
+      <input type="text" formControlName="hobby">
+    </label>
+  </div>
+
+  <br><br>
+
+  <label>
+    Favourite Subject:
+    <select formControlName="subject">
+      <option value="">Select</option>
+      <option>Maths</option>
+      <option>Science</option>
+      <option>English</option>
+    </select>
+  </label>
+
+  <br><br>
+
+  <button type="submit" [disabled]="studentForm.invalid">
+    Save
+  </button>
+
+</form>
