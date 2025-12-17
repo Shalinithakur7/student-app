@@ -1,7 +1,7 @@
 an angular app
-<img width="1882" height="861" alt="adding the sudent" src="https://github.com/user-attachments/assets/859acc5b-24cf-4f1d-8107-af72ab6ba6fd" />
-<img width="1911" height="520" alt="after adding the student" src="https://github.com/user-attachments/assets/619718ad-7eec-4f01-bd61-9b7d87034adb" />
-<img width="1897" height="796" alt="form" src="https://github.com/user-attachments/assets/297e2a79-eada-4ea1-b55a-659dded8908c" />
-<img width="1840" height="661" alt="initial home page" src="https://github.com/user-attachments/assets/d1dc1e8f-e20c-4651-9c12-db6805a5eec3" />
 
 
+<img width="1334" height="510" alt="home page" src="https://github.com/user-attachments/assets/911d35bc-3dc6-457e-8016-e31298bfe20b" />
+<img width="953" height="485" alt="adding student" src="https://github.com/user-attachments/assets/a322c4d1-6ce4-4aef-a06d-48d4277c84c4" />
+<img width="1761" height="670" alt="adding" src="https://github.com/user-attachments/assets/64b24574-88e7-4dfa-8ed0-e2ae1db2fdcc" />
+<img width="1664" height="662" alt="after adding" src="https://github.com/user-attachments/assets/26c10605-3cdb-4c4d-92ad-0fa57a88451b" />
